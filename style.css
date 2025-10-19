@@ -1,0 +1,265 @@
+/* Estilos generales del cuerpo */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #111;
+    color: white;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Estilos para el lienzo de partículas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Estilos del contenedor principal */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Aumentamos el ancho para el texto */
+    position: relative;
+    z-index: 1;
+    margin: 15vh auto 0; /* Margen superior, centrado horizontal, sin margen inferior */
+    padding: 5vh 20px; /* Espacio vertical y horizontal */
+}
+
+/* Estilos para el logo con animación */
+.logo {
+    width: 360px;
+    height: 360px;
+    object-fit: contain;
+    margin-bottom: -30px; /* Margen negativo para acercar el texto */
+    animation: float 4s ease-in-out infinite; 
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.logo.scrolled {
+    width: 306px;
+    height: 306px;
+}
+
+.company-name {
+    color: #FFFFFF;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 80px;
+    text-align: center;
+    animation: text-glow 3s ease-in-out infinite;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Contenedor para el nuevo texto */
+.text-content {
+    text-align: left; /* Alineamos el texto a la izquierda para legibilidad */
+    margin-top: 20px;
+}
+
+.text-content h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #FFFFFF; /* Color blanco para resaltar */
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FFFFFF;
+    padding-bottom: 10px;
+}
+
+.text-content h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.text-content p, .text-content li {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #dddddd;
+}
+
+.text-content ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.text-content ul li {
+    margin-bottom: 10px;
+}
+
+/* Media query para pantallas de móviles (hasta 767px) */
+@media (max-width: 767px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10vh;
+        padding-bottom: 5vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .logo {
+        width: 90%;
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    .logo.scrolled {
+        width: 70%;
+        height: auto;
+    }
+
+    .company-name {
+        font-size: 2em; /* Tamaño de fuente ajustado para móvil */
+        margin-top: -15px;
+    }
+
+    .text-content {
+        text-align: center; /* Centra el texto en la versión móvil */
+    }
+
+    .text-content ul {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+}
+
+/* Media query para pantallas más grandes (versión de PC) */
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center; /* Centra los elementos en el eje principal (horizontal) */
+        align-items: center; /* Centra los elementos verticalmente */
+        padding: 0 5%; /* Añade un poco de padding a los lados */
+    }
+
+    #particles-js {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/imagen-de-fondo-pc.jpg');
+        background-position: center top;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .text-content {
+        text-align: center; /* Centra el texto dentro de este contenedor */
+    }
+
+    .company-name {
+        font-size: 3.25em; /* Aumentado un 30% desde 2.5em */
+    }
+}
+.footer-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-top: 30px;
+}
+
+/* Estilos para la marca de agua */
+.watermark {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    opacity: 0.3;
+    pointer-events: none; /* Para que no interfiera con los clics */
+    transition: opacity 0.3s ease-in;
+}
+
+.watermark.hidden {
+    opacity: 0;
+}
+
+.watermark img {
+    width: 120px; /* Ancho sutil */
+    height: auto;
+}
+
+.instagram-wrapper {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instagram-link {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #3d3d3d;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.instagram-link:hover {
+  transform: scale(1.1);
+  background-color: #4a4a4a;
+}
+
+.instagram-link svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+.instagram-text {
+    font-size: 0.8em;
+    color: #cccccc;
+    margin-top: 5px;
+}
+
+/* Estilos para el botón dorado */
+#personal-account-btn {
+    background-color: #bd973e;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+#personal-account-btn:hover {
+    background-image: linear-gradient(to top, rgba(189, 151, 62, 0.8) 0%, rgba(189, 151, 62, 1) 100%);
+    color: #FFFFFF;
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00BFFF;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #00BFFF, 0 0 30px #00BFFF;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
